@@ -22,10 +22,8 @@
 
   AlreadyBoughtController.$inject = ['ShoppingListCheckOffService']
   function AlreadyBoughtController(ShoppingListCheckOffService) {
-
     var bought = this;
     bought.items = ShoppingListCheckOffService.getBoughtList();
-
   }
 
   function ShoppingListCheckOffService() {
@@ -64,7 +62,6 @@
     };
 
     service.removeFromToBuyList = function (itemIndex) {
-      console.log("removeFromToBuyList --> index = " + itemIndex);
       toBuyList.splice(itemIndex, 1);
     };
 
@@ -73,12 +70,10 @@
     };
 
     service.addToBoughtList = function (itemName, quantity) {
-
       var item = {
         name: itemName,
         quantity: quantity
       };
-      console.log("pushed --> " + item.itemName + " " + item.quantity);
       boughtList.push(item);
     };
 
